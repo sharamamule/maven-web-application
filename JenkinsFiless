@@ -18,7 +18,7 @@ stage('Build')
  {
  sh  "${mavenHome}/bin/mvn sonar:sonar"
  }
- 
+ /*
  stage('UploadArtifactintoNexus')
  {
  sh  "${mavenHome}/bin/mvn deploy"
@@ -30,7 +30,7 @@ stage('Build')
   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.84.250.91:/opt/apache-tomcat-9.0.34/webapps/"
  }
  }
- 
+ */
  stage('EmailNotification')
  {
  emailext body: '''Build it over
